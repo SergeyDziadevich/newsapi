@@ -1,0 +1,6 @@
+
+# WebStrom project files
+.idea
+*.iml
+out
+gen
