@@ -48,6 +48,25 @@ b, strong {
 	font-weight: bold;
 }
 
+.card{
+	margin: 0 0 15px 0;
+	.card-block{
+		padding: 15px;
+	}
+}
+
+
+footer{
+	.row{
+		justify-content: flex-end;
+	}
+	a{
+		float: right;
+		font-size: 10px;
+		color:#000;
+	}
+}
+
 
 
 @import "media"; // Always at the end
