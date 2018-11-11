@@ -48,12 +48,19 @@ b, strong {
 	font-weight: bold;
 }
 
-.card{
-	margin: 0 0 15px 0;
-	.card-block{
-		padding: 15px;
-	}
+.news-container{
+  ul{
+    list-style: none;
+    padding: 0;
+    .card{
+      margin: 0 0 15px 0;
+      .card-block{
+        padding: 15px;
+      }
+    }
+  }
 }
+
 
 
 footer{

@@ -15,6 +15,7 @@ fetch(req)
     .then(function(response) {
         console.log(response.json());
     });
+
 // -------------------------------------------------------------
 
 let newsContainer = 'news-container',
@@ -22,17 +23,12 @@ let newsContainer = 'news-container',
     newsSrc = 'bbc-news',
     newsLimit = 10;
 
-
-// let urlNews = 'https://newsapi.org/v2/top-headlines?' +
-//               'sources=bbc-news&' +
-//               'apiKey=eabd967104da4e07a9c41b1342a889b1';
-    let urlNews = `https://newsapi.org/v2/top-headlines?sources=${newsSrc}&apiKey=${newsApiKey}`;
+let urlNews = `https://newsapi.org/v2/top-headlines?sources=${newsSrc}&apiKey=${newsApiKey}`;
 
 fetch(new Request(urlNews))
     .then(response =>  {
         response.json().then(news => { renderNews(newsContainer, news) } );
     });
-
 
 
 function renderNews(elemId, news) {
@@ -43,7 +39,6 @@ function renderNews(elemId, news) {
             .reduce((txt, li) => txt + li, '<ul class="articles row">') + '</ul>';
     }
 }
-
 
 function render(article) {
     return `<div class="card">
