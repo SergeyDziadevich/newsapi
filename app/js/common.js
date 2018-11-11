@@ -35,12 +35,12 @@ function renderNews(elemId, news) {
     let elem = document.getElementById(elemId);
     if (elem && news.status == 'ok') {
         elem.innerHTML = news.articles
-            .map(a => '<li class="col-xs-12 col-lg-10 col-xl-8">' + renderNews(a) + '</li>')
+            .map(a => '<li class="col-xs-12 col-lg-10 col-xl-8">' + render(a) + '</li>')
             .reduce((txt, li) => txt + li, '<ul class="articles row">') + '</ul>';
     }
 }
 
-function renderNews(article) {
+function render(article) {
     return `<div class="card">
           <img class="card-img-top w-100" src="${article.urlToImage}" alt="${article.title}">
           <div class="card-block">
