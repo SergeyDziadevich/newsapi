@@ -54,6 +54,7 @@ function renderNews(elemId, news) {
 //         </div>`;
 // }
 
+
 document.querySelector('.select-channel ul').addEventListener('click', function(e){
 
     let menuList = document.querySelectorAll(".select-channel ul li");
