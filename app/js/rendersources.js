@@ -5,7 +5,7 @@ function renderSources(elemId, sources) {
       .map(s => `<li class="col-xs-6 col-sm-6 col-lg-3 col-xl-3" data-sourceid='${s.id}'>${s.name}</li>`)
       .reduce((txt, li) => txt + li, '<ul class="row">') + '</ul>';
 
-    document.querySelector('#news-sources ul').addEventListener('click', function (e) {
+    document.querySelector('#news-sources ul').addEventListener('click', e => {
 
       let menuList = document.querySelectorAll("#news-sources ul li");
       menuList.forEach(item => {
