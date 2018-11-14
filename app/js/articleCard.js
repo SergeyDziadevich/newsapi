@@ -1,4 +1,3 @@
-//export default function render(article) {
 function render(article) {
     return `<div class="card">
           <img class="card-img-top w-100" src="${article.urlToImage}" alt="${article.title}">
