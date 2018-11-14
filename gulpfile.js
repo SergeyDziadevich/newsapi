@@ -37,9 +37,9 @@ gulp.task('js', function () {
     return gulp.src([
         // 'app/libs/jquery/dist/jquery.min.js',
         'app/js/common.js',
-        'app/js/articleCard.js',
-        'app/js/SelectSources.js',
-        'app/js/RenderSources.js'
+        'app/js/articlecard.js',
+        'app/js/selectsources.js',
+        'app/js/rendersources.js'
         // Always at the end
     ])
         .pipe(concat('scripts.js'))
