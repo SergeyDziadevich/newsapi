@@ -8,7 +8,6 @@ newCategories.forEach(value => {
 });
 htmlSelect += '</select>';
 
-
 document.getElementById("news-categories").innerHTML = htmlSelect;
 
 document.querySelector('.sel-cat').addEventListener('change', function (e) {
