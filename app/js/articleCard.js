@@ -6,7 +6,7 @@ function render(article) {
             <h4 class="card-title">${article.title}</h4>
             <p class="text-muted small">${(new Date(article.publishedAt)).toLocaleString()}</p>
             <p class="card-text">${article.description}</p>
-            <a href="${article.url}" target="_blank" class="btn btn-primary">Read on BBC</a>
+            <a href="${article.url}" target="_blank" class="btn btn-primary">Read more</a>
           </div>
         </div>`;
 }

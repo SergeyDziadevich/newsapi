@@ -3,12 +3,12 @@
 @import "libs";
 
 ::placeholder {
-	color: #666;
+  color: #666;
 }
 
 ::selection {
-	background-color: $accent;
-	color: #fff;
+  background-color: $accent;
+  color: #fff;
 }
 
 .img-responsive {
@@ -28,11 +28,10 @@ b, strong {
   font-weight: bold;
 }
 
-
-header{
-  .row{
+header {
+  .row {
     justify-content: center;
-    h1{
+    h1 {
       margin: 15px auto;
       text-align: center;
     }
@@ -40,74 +39,88 @@ header{
 }
 
 body {
-	font-size: 16px;
-	min-width: 320px;
-	position: relative;
-	line-height: 1.65;
-	font-family: $default-font;
-	overflow-x: hidden;
-	color: $text;
-	input, textarea {
-		border: #666 1px solid;
-		outline: none;
-		&:focus:required:invalid {
-			border-color: red;
-		}
-		&:required:valid {
-			border-color: green;
-		}
-	}
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  font-family: $default-font;
+  overflow-x: hidden;
+  color: $text;
+  input, textarea {
+    border: #666 1px solid;
+    outline: none;
+    &:focus:required:invalid {
+      border-color: red;
+    }
+    &:required:valid {
+      border-color: green;
+    }
+  }
 
 }
 
-.select-channel{
-  .row{
+.select-channel {
+  .row {
     justify-content: center;
   }
 
-  ul{
+  ul {
     list-style: none;
     text-align: center;
     padding: 0;
-    li{
+    li {
       display: inline-block;
       font-size: 20px;
       margin: 0 15px 0 0;
       cursor: pointer;
-      &.active{
+      &.active {
         text-decoration: underline;
       }
     }
   }
 }
 
-.news-container{
-  ul{
+.news-container {
+  ul {
     list-style: none;
     padding: 0;
     justify-content: center;
-    .card{
+    .card {
       margin: 0 0 15px 0;
-      .card-block{
+      .card-block {
         padding: 15px;
       }
     }
   }
 }
 
-
-
-footer{
-	.row{
-		justify-content: flex-end;
-	}
-	a{
-		float: right;
-		font-size: 10px;
-		color:#000;
-	}
+footer {
+  .row {
+    justify-content: flex-end;
+  }
+  a {
+    float: right;
+    font-size: 14px;
+    color: #000;
+  }
 }
 
+#news-categories{
+  margin: 0 0 15px 0;
+}
+#news-sources{
+  ul{
+    list-style: none;
+    padding: 0;
+    li{
+      margin: 10px 0 0 0;
+      cursor: pointer;
+      &.active{
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    }
+  }
+}
 
-
-@import "media"; // Always at the end
+@import "media";

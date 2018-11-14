@@ -3,62 +3,76 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<!-- <base href="/"> -->
+  <meta charset="utf-8">
+  <!-- <base href="/"> -->
 
-	<title>FRONTCAMP - ES6 application that uses newsapi.org</title>
-	<meta name="description" content="">
+  <title>FRONTCAMP - ES6 application that uses newsapi.org</title>
+  <meta name="description" content="">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
 
-
-	<link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
 
 </head>
 
 <body>
-	<header class="container">
-		<div class="row">
-			<div class="col-xs-12 col-lg-10 col-xl-8">
-				<h1>News reader App</h1>
-			</div>
-		</div>
-	</header>
-
-    <div class="select-channel container">
-        <div class="row">
-            <div class="col-xs-12 col-lg-10 col-xl-8">
-                <ul>
-                    <li id="bbc-news" class="active">
-                        bbc-news
-                    </li>
-                    <li id="bbc-sport">
-                        bbc-sport
-                    </li>
-                </ul>
-            </div>
-        </div>
+<header class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-10 col-xl-8">
+      <h1>News reader App</h1>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10">
+      <div id="news-categories">
 
-	<div id="news-container" class="news-container container">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10">
+      <div id="news-sources">
 
-	</div>
+      </div>
+    </div>
+  </div>
+</header>
 
-	<footer>
-		<div class="container">
-			<div class="row">
-				<a href="https://newsapi.org/" target="_blank">Powered by News API</a>
-			</div>
-		</div>
-	</footer>
+<!--
+<div class="select-channel container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-10 col-xl-8">
+      <ul>
+        <li id="bbc-news" class="active">
+          bbc-news
+        </li>
+        <li id="bbc-sport">
+          bbc-sport
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+-->
 
-	<script src="js/scripts.min.js"></script>
+<div id="news-container" class="news-container container">
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <a href="https://newsapi.org/" target="_blank">Powered by News API</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/scripts.js"></script>
 
 </body>
 </html>
