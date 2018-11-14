@@ -8,7 +8,7 @@ function renderSources(elemId, sources) {
     document.querySelector('#news-sources ul').addEventListener('click', function (e) {
 
       let menuList = document.querySelectorAll("#news-sources ul li");
-      menuList.forEach(function (item) {
+      menuList.forEach(item => {
         item.classList.remove("active");
       });
 
