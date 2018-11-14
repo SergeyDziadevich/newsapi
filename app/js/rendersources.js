@@ -9,12 +9,12 @@ function renderSources(elemId, sources) {
 
       let menuList = document.querySelectorAll("#news-sources ul li");
       menuList.forEach(item => {
-        item.classList.remove("active");
+        item.classList.remove('active');
       });
 
       let newsSrc = e.target.getAttribute('data-sourceid');
 
-      e.target.classList.add("active");
+      e.target.classList.add('active');
 
       urlNews = `https://newsapi.org/v2/top-headlines?sources=${newsSrc}&apiKey=${newsApiKey}`;
 
