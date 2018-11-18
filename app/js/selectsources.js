@@ -8,8 +8,8 @@ let htmlSelect = `
 
 document.getElementById('news-categories').innerHTML = htmlSelect;
 
-document.querySelector('.sel-cat').addEventListener('change', function (e) {
-  let selectedCategory = this.value;
+document.querySelector('.sel-cat').addEventListener('change', e => {
+  let selectedCategory = e.target.value;
 
   let urlNews = `https://newsapi.org/v2/sources?category=${selectedCategory}&apiKey=${newsApiKey}`;
 
