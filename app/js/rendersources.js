@@ -18,10 +18,9 @@ function renderSources(elemId, sources) {
       urlNews = `https://newsapi.org/v2/top-headlines?sources=${newsSrc}&apiKey=${newsApiKey}`;
 
       fetch(new Request(urlNews))
-        .then(response => {
-          response.json().then(news => {
-            renderNews(newsContainer, news)
-          });
+        .then(response => response.json())
+        .then(news => {
+          renderNews(newsContainer, news);
         });
     });
   }
