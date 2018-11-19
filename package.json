@@ -2,14 +2,19 @@
   "name": "newsapi-es6",
   "version": "1.0.0",
   "description": "ES6 training application that uses newsapi.org",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "build": "babel app/js --out-file app/app.bundle.js",
+    "watch": "babel app/js --watch --out-file app/app.bundle.js"
   },
   "author": "Sergey Dziadevich",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",

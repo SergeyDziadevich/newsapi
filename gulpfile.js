@@ -33,11 +33,9 @@ gulp.task('styles', function () {
 gulp.task('js', function () {
   return gulp.src([
     // 'app/libs/jquery/dist/jquery.min.js',
-    'app/js/api.js',
-    'app/js/common.js',
-    'app/js/articlecard.js',
-    'app/js/selectsources.js',
-    'app/js/rendersources.js',
+   // 'app/js/api.js',
+   // 'app/js/common.js',
+   // 'app/js/sources.js',
 
     // Always at the end
   ])

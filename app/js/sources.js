@@ -1,3 +1,23 @@
+import ResponseApi from './api';
+import {renderNews} from './news';
+import {newCategories, sourcesContainer, newsContainer} from './common.js';
+
+let htmlSelect = `
+  <select class="form-control sel-cat" id="cat_val" name="cat-select">
+    ${newCategories.reduce((allOpt, opt) => allOpt + `<option value="${opt}">${opt}</option>`, `<option value="0">Select news category:</option>`)}
+  </select>`;
+
+document.getElementById('news-categories').innerHTML = htmlSelect;
+
+document.querySelector('.sel-cat').addEventListener('change', e => {
+  let selectedCategory = e.target.value;
+
+  ResponseApi.getSourcesOnCategory(selectedCategory)
+    .then(sources => {
+      renderSources(sourcesContainer, sources);
+    });
+});
+
 function renderSources(elemId, sources) {
   let elem = elemId;
   if (elem && sources.status == 'ok') {
@@ -22,4 +42,3 @@ function renderSources(elemId, sources) {
     });
   }
 }
-
