@@ -14,11 +14,9 @@ document.querySelector('.sel-cat').addEventListener('change', e => {
   let urlNews = `https://newsapi.org/v2/sources?category=${selectedCategory}&apiKey=${newsApiKey}`;
 
   fetch(new Request(urlNews))
-    .then(response => {
-      response.json().then(sources => {
-        console.log(sources);
-        renderSources(sourcesContainer, sources);
-      });
+    .then(response =>  response.json())
+    .then(sources => {
+      renderSources(sourcesContainer, sources);
     });
 });
 
