@@ -1,5 +1,4 @@
 const newsContainer = document.getElementById('news-container');
-const newsApiKey = 'eabd967104da4e07a9c41b1342a889b1';
 
 function renderNews(elemId, news) {
   let elem = elemId;

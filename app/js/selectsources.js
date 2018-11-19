@@ -11,10 +11,7 @@ document.getElementById('news-categories').innerHTML = htmlSelect;
 document.querySelector('.sel-cat').addEventListener('change', e => {
   let selectedCategory = e.target.value;
 
-  let urlNews = `https://newsapi.org/v2/sources?category=${selectedCategory}&apiKey=${newsApiKey}`;
-
-  fetch(new Request(urlNews))
-    .then(response =>  response.json())
+  ResponseApi.getSourcesOnCategory(selectedCategory)
     .then(sources => {
       renderSources(sourcesContainer, sources);
     });

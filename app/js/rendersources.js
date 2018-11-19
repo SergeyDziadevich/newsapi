@@ -15,10 +15,7 @@ function renderSources(elemId, sources) {
 
       e.target.classList.add('active');
 
-      urlNews = `https://newsapi.org/v2/top-headlines?sources=${newsSrc}&apiKey=${newsApiKey}`;
-
-      fetch(new Request(urlNews))
-        .then(response => response.json())
+      ResponseApi.getNewsOnSource(newsSrc)
         .then(news => {
           renderNews(newsContainer, news);
         });
