@@ -5,6 +5,7 @@
 /app/libs/
 /app/fonts/
 /app/img/
+/app/build/
 /**/_backstage
 /**/package-lock.json
 /**/Thumbs.db
