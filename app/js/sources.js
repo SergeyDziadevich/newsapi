@@ -1,6 +1,5 @@
-import ResponseApi from './api';
+import {NewsApi} from './api';
 import {renderNews} from './news';
-import {newCategories, sourcesContainer, newsContainer} from './common.js';
 
 let htmlSelect = `
   <select class="form-control sel-cat" id="cat_val" name="cat-select">

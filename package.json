@@ -2,12 +2,14 @@
   "name": "newsapi-es6",
   "version": "1.0.0",
   "description": "ES6 training application that uses newsapi.org",
-  "main": "gulpfile.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp",
     "build": "babel app/js --out-file app/bundle.js",
-    "watch": "babel app/js --watch --out-file app/bundle.js"
+    "watch": "babel app/js --watch --out-file app/bundle.js",
+    "dev": "webpack-dev-server --inline --hot",
+    "webpack": "webpack"
   },
   "author": "Sergey Dziadevich",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
+    "babel-loader": "^8.0.4",
     "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
@@ -25,9 +28,14 @@
     "gulp-rsync": "0.0.8",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "nodelist-foreach-polyfill": "^1.2.0",
+    "webpack": "^4.26.0",
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0"
+    "@babel/polyfill": "^7.0.0",
+    "webpack-cli": "^3.1.2",
+    "whatwg-fetch": "^3.0.0"
   }
 }
