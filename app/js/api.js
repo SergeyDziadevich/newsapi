@@ -5,11 +5,11 @@ export class NewsApi{
   static async getSourcesOnCategory(category){
     const url = `${host}/sources?category=${category}&apiKey=${apiKey}`;
     return fetch(url).then(response => response.json());
-  }
+  };
 
   static async getNewsOnSource(source){
     const url = `${host}/top-headlines?sources=${source}&apiKey=${apiKey}`;
     return fetch(url).then(response => response.json());
-  }
+  };
 }
 

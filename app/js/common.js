@@ -1,4 +1,4 @@
- import {NewsApi} from './api';
+import {NewsApi} from './api';
 import {renderNews} from './news';
 
 const newCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
@@ -15,10 +15,16 @@ document.getElementById('news-categories').innerHTML = htmlSelect;
 document.querySelector('.sel-cat').addEventListener('change', e => {
   let selectedCategory = e.target.value;
 
-  NewsApi.getSourcesOnCategory(selectedCategory)
-    .then(sources => {
-      renderSources(sourcesContainer, sources);
-    });
+  // NewsApi.getSourcesOnCategory(selectedCategory)
+  //   .then(sources => {
+  //     renderSources(sourcesContainer, sources);
+  //   });
+  async function getSource(){
+    let sources = await NewsApi.getSourcesOnCategory(selectedCategory);
+    renderSources(sourcesContainer, sources);
+  }
+  getSource();
+
 });
 
 function renderSources(elemId, sources) {
@@ -38,10 +44,16 @@ function renderSources(elemId, sources) {
 
       e.target.classList.add('active');
 
-      NewsApi.getNewsOnSource(newsSrc)
-        .then(news => {
-          renderNews(newsContainer, news);
-        });
+      // NewsApi.getNewsOnSource(newsSrc)
+      //   .then(news => {
+      //     renderNews(newsContainer, news);
+      //   });
+      async function getNews(){
+        let news = await NewsApi.getNewsOnSource(newsSrc);
+        renderNews(newsContainer, news);
+      }
+      getNews();
+
     });
   }
 }
