@@ -16,3 +16,6 @@
 *.iml
 out
 gen
+/app/js/bundle.js
+/app/js/scripts.js
+/app/js/scripts.min.js

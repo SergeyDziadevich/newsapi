@@ -1,4 +1,4 @@
-import {NewsApi} from './api';
+ import {NewsApi} from './api';
 import {renderNews} from './news';
 
 const newCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
