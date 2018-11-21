@@ -1,21 +1,7 @@
-import {NewsApi} from './api';
-import {renderNews} from './news';
+import {NewsApi} from "./api";
+import {renderNews} from "./news";
 
-let htmlSelect = `
-  <select class="form-control sel-cat" id="cat_val" name="cat-select">
-    ${newCategories.reduce((allOpt, opt) => allOpt + `<option value="${opt}">${opt}</option>`, `<option value="0">Select news category:</option>`)}
-  </select>`;
-
-document.getElementById('news-categories').innerHTML = htmlSelect;
-
-document.querySelector('.sel-cat').addEventListener('change', e => {
-  let selectedCategory = e.target.value;
-
-  NewsApi.getSourcesOnCategory(selectedCategory)
-    .then(sources => {
-      renderSources(sourcesContainer, sources);
-    });
-});
+const newsContainer = document.getElementById('news-container');
 
 function renderSources(elemId, sources) {
   let elem = elemId;
@@ -34,10 +20,13 @@ function renderSources(elemId, sources) {
 
       e.target.classList.add('active');
 
-      NewsApi.getNewsOnSource(newsSrc)
-        .then(news => {
-          renderNews(newsContainer, news);
-        });
+      async function getNews(){
+        let news = await NewsApi.getNewsOnSource(newsSrc);
+        renderNews(newsContainer, news);
+      }
+      getNews();
     });
   }
 }
+
+export{renderSources}

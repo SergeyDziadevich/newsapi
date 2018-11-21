@@ -1,9 +1,8 @@
 import {NewsApi} from './api';
-import {renderNews} from './news';
+import {renderSources} from './sources';
 
 const newCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
 const sourcesContainer = document.querySelector('#news-sources');
-const newsContainer = document.getElementById('news-container');
 
 let htmlSelect = `
   <select class="form-control sel-cat" id="cat_val" name="cat-select">
@@ -22,28 +21,3 @@ document.querySelector('.sel-cat').addEventListener('change', e => {
   getSource();
 });
 
-function renderSources(elemId, sources) {
-  let elem = elemId;
-  if (elem && sources.status == 'ok') {
-    elem.innerHTML = sources.sources
-      .reduce((txt, li) => txt + `<li class="col-xs-6 col-sm-6 col-lg-3 col-xl-3" data-sourceid='${li.id}'>${li.name}</li>`, `<ul class='row'>`) + '</ul>';
-
-    document.querySelector('#news-sources ul').addEventListener('click', e => {
-
-      let menuList = document.querySelectorAll("#news-sources ul li");
-      menuList.forEach(item => {
-        item.classList.remove('active');
-      });
-
-      let newsSrc = e.target.getAttribute('data-sourceid');
-
-      e.target.classList.add('active');
-
-      async function getNews(){
-        let news = await NewsApi.getNewsOnSource(newsSrc);
-        renderNews(newsContainer, news);
-      }
-      getNews();
-    });
-  }
-}
