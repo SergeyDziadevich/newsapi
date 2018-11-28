@@ -1,3 +1,5 @@
+import '../scss/main.scss';
+
 import {NewsApi} from './api';
 import {renderSources} from './sources';
 

@@ -17,4 +17,4 @@ function render(article) {
         </div>`;
 }
 
-export{renderNews}
+export {renderNews}

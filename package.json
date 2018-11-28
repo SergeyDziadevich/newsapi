@@ -4,26 +4,35 @@
   "description": "ES6 training application that uses newsapi.org",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --mode development",
-    "production": "webpack --mode production",
-    "start": "webpack-dev-server  --mode development --hot"
+    "build": "webpack --mode=development",
+    "production": "webpack --mode=production",
+    "start": "webpack-dev-server --mode=development --hot"
   },
   "author": "Sergey Dziadevich",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
+    "@babel/cli": "7.1.5",
+    "@babel/core": "7.1.6",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/preset-env": "7.1.6",
     "autoprefixer": "9.1.5",
-    "mini-css-extract-plugin": "0.4.2",
-    "babel-loader": "^8.0.4",
-    "webpack": "^4.26.0",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "babel-loader": "8.0.4",
+    "css-loader": "1.0.1",
+    "html-loader": "0.5.5",
+    "json-loader": "0.5.7",
+    "mini-css-extract-plugin": "0.4.5",
+    "node-sass": "4.10.0",
+    "postcss-loader": "3.0.0",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "webpack": "4.26.1",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.10"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "whatwg-fetch": "^3.0.0",
-    "nodelist-foreach-polyfill": "^1.2.0"
+    "@babel/polyfill": "7.0.0",
+    "bootstrap": "4.1.3",
+    "nodelist-foreach-polyfill": "1.2.0",
+    "whatwg-fetch": "3.0.0"
   }
 }
