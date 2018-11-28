@@ -1,28 +1,14 @@
-import ResponseApi from './api';
-import {renderNews} from './news';
-import {newCategories, sourcesContainer, newsContainer} from './common.js';
+import {NewsApi} from "./api";
+import {renderNews} from "./news";
 
-let htmlSelect = `
-  <select class="form-control sel-cat" id="cat_val" name="cat-select">
-    ${newCategories.reduce((allOpt, opt) => allOpt + `<option value="${opt}">${opt}</option>`, `<option value="0">Select news category:</option>`)}
-  </select>`;
-
-document.getElementById('news-categories').innerHTML = htmlSelect;
-
-document.querySelector('.sel-cat').addEventListener('change', e => {
-  let selectedCategory = e.target.value;
-
-  ResponseApi.getSourcesOnCategory(selectedCategory)
-    .then(sources => {
-      renderSources(sourcesContainer, sources);
-    });
-});
+const newsContainer = document.getElementById('news-container');
 
 function renderSources(elemId, sources) {
   let elem = elemId;
   if (elem && sources.status == 'ok') {
     elem.innerHTML = sources.sources
-      .reduce((txt, li) => txt + `<li class="col-xs-6 col-sm-6 col-lg-3 col-xl-3" data-sourceid='${li.id}'>${li.name}</li>`, `<ul class='row'>`) + '</ul>';
+      .reduce((txt, li) => txt + `<li class="col-xs-6 col-sm-6 col-lg-3 col-xl-3" data-sourceid='${li.id}'>
+        ${li.name}</li>`, `<ul class='row'>`) + '</ul>';
 
     document.querySelector('#news-sources ul').addEventListener('click', e => {
 
@@ -35,10 +21,13 @@ function renderSources(elemId, sources) {
 
       e.target.classList.add('active');
 
-      ResponseApi.getNewsOnSource(newsSrc)
-        .then(news => {
-          renderNews(newsContainer, news);
-        });
+      async function getNews(){
+        let news = await NewsApi.getNewsOnSource(newsSrc);
+        renderNews(newsContainer, news);
+      }
+      getNews();
     });
   }
 }
+
+export{renderSources}
