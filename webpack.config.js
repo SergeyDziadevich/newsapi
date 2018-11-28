@@ -1,6 +1,8 @@
 const path = require('path');
 const distPath = path.join(__dirname, '/app');
 
+const NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
   mode: 'development',
   entry: ['whatwg-fetch', '@babel/polyfill', 'nodelist-foreach-polyfill', './app/js/common.js'],
@@ -13,28 +15,15 @@ module.exports = {
     rules: [
       {
         test: /\.js/,
-        use:[
-          {
-            loader: 'babel-loader',
-            options: {
-              "presets": [
-                [
-                  "@babel/preset-env",
-                  {
-                    "targets": {
-                      "browsers": ["last 4 versions", "ie >= 11"]
-                    }
-                  }
-                ]
-              ]
-            }
-          }
-        ]
+        exclude: /node_modules/,
+        use:[{ loader: 'babel-loader' }]
       }
     ]
   },
-  devtool: 'source-map',
-  watch: true,
+
+  watch:  NODE_ENV == 'development',
+
+  devtool: NODE_ENV == 'development' ? 'source-map' : null,
 
   devServer: {
     contentBase: distPath,
