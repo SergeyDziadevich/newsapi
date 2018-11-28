@@ -1,7 +1,6 @@
 import 'bootstrap/scss/bootstrap.scss';
 import '../scss/btn-shownews.scss';
 
-
 const body = document.querySelector('body');
 
 const button = document.createElement('button');
