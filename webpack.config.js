@@ -17,7 +17,7 @@ var config = {
   },
 
   resolveLoader: {
-    modules: ['node_modules', path.resolve(__dirname, 'loaders')],
+    modules: ['node_modules', path.resolve(__dirname, 'custom_loaders')],
   },
 
   module: {

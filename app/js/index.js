@@ -1,6 +1,8 @@
 import 'bootstrap/scss/bootstrap.scss';
 import '../scss/btn-shownews.scss';
 
+//import './test.json';
+
 const body = document.querySelector('body');
 
 const button = document.createElement('button');
