@@ -1,7 +1,9 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-//const NODE_ENV = process.env.NODE_ENV || 'development';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 
 const distPath = path.join(__dirname, '/app');
@@ -13,15 +15,19 @@ var config = {
   output: {
     path: path.join(__dirname, 'app/build'),
     filename: 'app.bundle.js',
-    publicPath: '/build/'
+  //  publicPath: '/build/'
   },
 
   resolveLoader: {
-    modules: ['node_modules', path.resolve(__dirname, 'custom_loaders')],
+    modules: ['node_modules', path.resolve(__dirname, 'custom_loaders')]
   },
 
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+      },
       {
         test: /\.js/,
         exclude: /node_modules/,
@@ -46,19 +52,22 @@ var config = {
           loader: 'sass-loader' // compiles Sass to CSS
         }]
       },
-      {
-        test: /\.json/,
+     {
+        test: /\.json$/,
         use: [{ loader: 'json-loader' }],
-      //  use: [{  loader: path.resolve('./loaders/json-loader.js'), }],
       },
     ]
   },
 
   plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'app/index.html'),
+      inject: true
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
-    })
+    }),
   ],
 
   devServer: {
