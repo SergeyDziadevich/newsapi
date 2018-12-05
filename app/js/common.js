@@ -1,11 +1,10 @@
 import '../scss/main.scss';
 
-import {FactoryApi} from './api';
+import {NewsApi} from './api';
 import {renderSources} from './sources';
 
 const newCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
 const sourcesContainer = document.querySelector('#news-sources');
-
 
 let htmlSelectCategories = `
   <select class="form-control sel-cat" id="cat_val" name="cat-select">
@@ -19,8 +18,7 @@ document.querySelector('.sel-cat').addEventListener('change', e => {
   let selectedCategory = e.target.value;
 
   async function getSource(){
-    let requestApi = FactoryApi.create('getsources', selectedCategory);
-    let sources = await requestApi.get();
+    let sources = await NewsApi.getSourcesOnCategory(selectedCategory);
     renderSources(sourcesContainer, sources);
   }
   getSource();
