@@ -22,9 +22,30 @@ function renderSources(elemId, sources) {
       e.target.classList.add('active');
 
       async function getNews(){
-        let requestApi = FactoryApi.create('getnews', newsSrc);
-        let news = await requestApi.get();
-        renderNews(newsContainer, news);
+        try {
+          let requestApi = FactoryApi.create('getnews', newsSrc);
+          let news = await requestApi.get();
+
+          //simulate error if news in source >= 7
+          if(news.totalResults >= 7){
+            throw new Error('too many results');
+          }
+
+          renderNews(newsContainer, news);
+
+        } catch (err) {
+          // const modalWindow = await import('./components/modal/modal');
+          // document.body.appendChild(modalWindow);
+
+          console.log(err.message);
+
+          //Lazy Initialization
+          import( './components/modal/modal').then(({
+            default: errorElement
+          }) => {
+            document.body.appendChild(errorElement);
+          });
+        }
       }
       getNews();
     });

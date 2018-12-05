@@ -2,6 +2,7 @@ const apiKey = 'eabd967104da4e07a9c41b1342a889b1';
 const host = 'https://newsapi.org/v2';
 
 export class FactoryApi{
+
   static create(type, param) {
 
     let requestApi;
