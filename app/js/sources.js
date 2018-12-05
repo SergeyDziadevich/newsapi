@@ -1,4 +1,4 @@
-import {NewsApi} from "./api";
+import {FactoryApi} from "./api";
 import {renderNews} from "./news";
 
 const newsContainer = document.getElementById('news-container');
@@ -22,7 +22,8 @@ function renderSources(elemId, sources) {
       e.target.classList.add('active');
 
       async function getNews(){
-        let news = await NewsApi.getNewsOnSource(newsSrc);
+        let requestApi = FactoryApi.create('getnews', newsSrc);
+        let news = await requestApi.get();
         renderNews(newsContainer, news);
       }
       getNews();

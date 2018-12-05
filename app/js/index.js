@@ -19,4 +19,3 @@ async function loadNews() {
   parent.removeChild(button);
 }
 
-
