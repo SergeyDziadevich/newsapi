@@ -15,7 +15,6 @@ var config = {
   output: {
     path: path.join(__dirname, 'app/build'),
     filename: 'app.bundle.js',
-  //  publicPath: '/build/'
   },
 
   resolveLoader: {
@@ -44,7 +43,7 @@ var config = {
           options: {
             plugins: function () { // post css plugins, can be exported to postcss.config.js
               return [
-               require('autoprefixer')
+                require('autoprefixer')
               ];
             }
           }
@@ -52,7 +51,7 @@ var config = {
           loader: 'sass-loader' // compiles Sass to CSS
         }]
       },
-     {
+      {
         test: /\.json$/,
         use: [{ loader: 'json-loader' }],
       },
@@ -91,4 +90,3 @@ module.exports = (env, argv) =>  {
 
   return config;
 };
-
