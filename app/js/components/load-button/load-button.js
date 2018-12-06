@@ -15,5 +15,5 @@ body.appendChild(loadButton);
 async function loadNews() {
   await import('../../common');
 
-  loadButton.remove()
+  body.removeChild(loadButton);
 }
