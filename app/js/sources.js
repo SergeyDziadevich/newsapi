@@ -24,8 +24,6 @@ function renderSources(elemId, sources) {
 
       async function getNews(){
         try {
-          // let requestApi = FactoryApi.create('getnews', newsSrc);
-          // let news = await requestApi.getApi();
           let requestApi = LogApi.create('getnews', newsSrc);
           let news = await requestApi.getApi();
 
@@ -37,8 +35,6 @@ function renderSources(elemId, sources) {
           renderNews(newsContainer, news);
 
         } catch (err) {
-          // const modalWindow = await import('./components/modal/modal');
-          // document.body.appendChild(modalWindow);
 
           console.log(err.message);
 
