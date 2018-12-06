@@ -7,10 +7,13 @@ export class FactoryApi{
 
     let requestApi;
 
+   this.type = type;
     if (type === 'getsources') {
       requestApi = new Getsources(param);
+      this.url = requestApi.url;
     } else if (type === 'getnews') {
       requestApi = new GetNews(param);
+      this.url = requestApi.url;
     }
 
     requestApi = Object.assign(requestApi, getRequest);
@@ -28,7 +31,25 @@ const GetNews = function (param) {
 };
 
 const getRequest = {
-  async get() {
+  async getApi() {
     return fetch(this.url).then(response => response.json());
   }
 };
+
+// Proxy
+export const LogApi = new Proxy(FactoryApi, {
+  get(target, name, receiver) {
+    return Reflect.get({
+      create(type, param) {
+        target.create(type, param);
+        console.log(`Request type: ${target.type}`);
+        console.log(`url address of API: ${target.url}`);
+        return target.create(type, param);
+      },
+      getApi() {
+
+        return target.getApi();
+      },
+    }, name, receiver);
+  },
+});

@@ -1,6 +1,8 @@
 import '../scss/main.scss';
 
-import {FactoryApi} from './api';
+import {FactoryApi} from './api'
+import {LogApi} from './api';
+
 import {renderSources} from './sources';
 
 const newCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
@@ -19,8 +21,12 @@ document.querySelector('.sel-cat').addEventListener('change', e => {
   let selectedCategory = e.target.value;
 
   async function getSource(){
-    let requestApi = FactoryApi.create('getsources', selectedCategory);
-    let sources = await requestApi.get();
+    // let requestApi = FactoryApi.create('getsources', selectedCategory);
+    // let sources = await requestApi.getApi();
+
+    let requestApi = LogApi.create('getsources', selectedCategory);
+    let sources = await requestApi.getApi();
+
     renderSources(sourcesContainer, sources);
   }
   getSource();

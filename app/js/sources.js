@@ -1,4 +1,6 @@
 import {FactoryApi} from "./api";
+import {LogApi} from './api';
+
 import {renderNews} from "./news";
 
 const newsContainer = document.getElementById('news-container');
@@ -23,11 +25,13 @@ function renderSources(elemId, sources) {
 
       async function getNews(){
         try {
-          let requestApi = FactoryApi.create('getnews', newsSrc);
-          let news = await requestApi.get();
+          // let requestApi = FactoryApi.create('getnews', newsSrc);
+          // let news = await requestApi.getApi();
+          let requestApi = LogApi.create('getnews', newsSrc);
+          let news = await requestApi.getApi();
 
-          //simulate error if news in source >= 7
-          if(news.totalResults >= 7){
+          //simulate error if news in source >= 10
+          if(news.totalResults >= 10){
             throw new Error('too many results');
           }
 
