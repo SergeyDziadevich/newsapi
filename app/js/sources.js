@@ -1,5 +1,4 @@
-import {FactoryApi} from "./api";
-import {LogApi} from './api';
+import {LogApi} from './proxy';
 
 import {renderNews} from "./news";
 

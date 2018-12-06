@@ -1,7 +1,6 @@
 import '../scss/main.scss';
 
-import {FactoryApi} from './api'
-import {LogApi} from './api';
+import {LogApi} from './proxy';
 
 import {renderSources} from './sources';
 
