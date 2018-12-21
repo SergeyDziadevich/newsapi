@@ -5,11 +5,6 @@
 </h1>
 
 FrontCamp Mentoring Program BY Q4 2018 4
-        
-
-<p>Author: Sergey Dziadevich</p>
-<p>
- see <a href="https://dzgweb.github.io/newsapi-es6/index.html" target="_blank">demo</a> 
 </p>
 <pre>
 <code>
