@@ -1,33 +1,33 @@
-const apiKey = 'eabd967104da4e07a9c41b1342a889b1';
-const host = 'https://newsapi.org/v2';
+const ApiKey = 'eabd967104da4e07a9c41b1342a889b1';
+const Host = 'https://newsapi.org/v2';
 
 export class FactoryApi{
 
   static create(type, param) {
 
-    let requestApi;
+  let requestApi;
 
-   this.type = type;
-    if (type === 'getsources') {
-      requestApi = new Getsources(param);
-      this.url = requestApi.url;
-    } else if (type === 'getnews') {
-      requestApi = new GetNews(param);
-      this.url = requestApi.url;
-    }
+  this.type = type;
+  if (type === 'getsources') {
+    requestApi = new Getsources(param);
+    this.url = requestApi.url;
+  } else if (type === 'getnews') {
+    requestApi = new GetNews(param);
+    this.url = requestApi.url;
+  }
 
-    requestApi = Object.assign(requestApi, getRequest);
+  requestApi = Object.assign(requestApi, getRequest);
 
-    return requestApi;
+  return requestApi;
   }
 }
 
 const Getsources = function (param) {
-  this.url = `${host}/sources?category=${param}&apiKey=${apiKey}`;
+  this.url = `${Host}/sources?category=${param}&apiKey=${ApiKey}`;
 };
 
 const GetNews = function (param) {
-  this.url = `${host}/top-headlines?sources=${param}&apiKey=${apiKey}`;
+  this.url = `${Host}/top-headlines?sources=${param}&apiKey=${ApiKey}`;
 };
 
 const getRequest = {
