@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-var newsSchema = new Schema({
-  id: Number,
+const NewsSchema = new Schema({
+ id: Number,
   title: String,
   author: String,
   description: String,
   url: String,
-  img: String,
+  urlToImage: String,
   publishedAt: { type: Date, default: Date.now },
   content: String
 });
