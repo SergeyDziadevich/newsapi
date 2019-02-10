@@ -3,13 +3,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+const logger = require('./utils/logger');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/news');
 
 const app = express();
-mongoose.connect('mongodb://localhost:27017/news', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/restaurants', { useNewUrlParser: true })
   .then(() => {
     logger.info(`Database connection successful`);
 
@@ -47,8 +47,12 @@ mongoose.connect('mongodb://localhost:27017/news', { useNewUrlParser: true })
       res.render('error');
     });
   })
-  .catch( err =>  {
+  .catch( err => {
+    logger.error(`Database connection error`);
 
+    app.use(function (req, res, next) {
+      next(createError(500));
+    });
   });
 
 
