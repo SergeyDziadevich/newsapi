@@ -4,9 +4,11 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('./utils/logger');
+const passport = require('./middlewares/passport');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/news');
+const newsRouter = require('./routes/news');
+const authRouter = require('./routes/auth');
 
 const app = express();
 mongoose.connect('mongodb://localhost:27017/news', { useNewUrlParser: true })
@@ -17,15 +19,21 @@ mongoose.connect('mongodb://localhost:27017/news', { useNewUrlParser: true })
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'pug');
 
-   // app.use(logger('dev'));
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
+    app.use(require('body-parser').urlencoded({ extended: true }));
     app.use(express.static(path.join(__dirname, 'public')));
 
+    app.use(require('express-session')({ secret: 'secret', resave: true, saveUninitialized: true }));
+
+
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     app.use('/', indexRouter);
-    app.use('/news', usersRouter);
+    app.use('/news', newsRouter);
+    app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
     app.use(function(req, res, next) {

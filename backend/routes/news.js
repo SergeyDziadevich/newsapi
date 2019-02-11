@@ -6,6 +6,7 @@ const News =  require( './../models/news');
 router.get('/', function (req, res, next) {
   try {
     logger.info(`GET news/`);
+
     News.find({})
       .then((news) => {
         res.send(news);
@@ -22,6 +23,8 @@ router.get('/', function (req, res, next) {
 router.get('/:id', function (req, res, next) {
   try {
     logger.info(`GET news/${req.params.id}`);
+
+    //News.find({ id: `${req.params.id}`})
     News.findById(req.params.id)
       .then((news) => {
         res.send(news);
@@ -39,6 +42,10 @@ router.get('/:id', function (req, res, next) {
 router.post('/', function (req, res, next) {
   try {
     logger.info(`POST news/`);
+
+    if (!req.isAuthenticated()) {
+      throw new Error('unauthenticated user');
+    }
 
     News.create(req.body)
       .then(() => {
@@ -58,6 +65,10 @@ router.put('/:id', function (req, res, next) {
   try {
     logger.info(`PUT news/${req.params.id}`);
 
+    if (!req.isAuthenticated()) {
+      throw new Error('unauthenticated user');
+    }
+
     News.findByIdAndUpdate(req.params.id, req.body)
       .then(() => {
         logger.info(`News updated successfully`);
@@ -75,6 +86,10 @@ router.put('/:id', function (req, res, next) {
 router.delete('/:id', function (req, res, next) {
   try {
     logger.info(`DELETE news/${req.params.id}`);
+
+    if (!req.isAuthenticated()) {
+      throw new Error('unauthenticated user');
+    }
 
     News.findByIdAndRemove(req.params.id)
       .then(() => {
