@@ -15,8 +15,8 @@ passport.use(new LocalStrategy(
 ));
 
 passport.use(new FacebookStrategy({
-    clientID: '292901174706332',
-    clientSecret: '7055cd2e46da6042554681c0a7b91015',
+    clientID: FACEBOOK_APP_ID,
+    clientSecret: FACEBOOK_APP_SECRET,
     callbackURL: '/auth/return'
   },
   function (accessToken, refreshToken, profile, cb) {
