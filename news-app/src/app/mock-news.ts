@@ -1,6 +1,6 @@
 import { Article } from './article';
 
-export const ARTICLE: Article[] = [
+export const ARTICLES: Article[] = [
   {
     author: 'null',
     title: 'What\'s moving markets today: Live updates - CNN',

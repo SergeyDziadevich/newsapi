@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ARTICLES } from '../mock-news';
 
 @Component({
   selector: 'app-news-list',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsListComponent implements OnInit {
 
+  articles = ARTICLES;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   deleteArticle() {
-    console.log(`the article has been removed`)
+    console.log(`the article has been removed`);
+  }
+
+  loadMore(){
+    console.log(`load more articles`);
   }
 }
