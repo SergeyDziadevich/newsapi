@@ -12,4 +12,7 @@ export class NewsListComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteArticle() {
+    console.log(`the article has been removed`)
+  }
 }

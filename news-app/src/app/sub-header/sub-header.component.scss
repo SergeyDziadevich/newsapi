@@ -1,0 +1,15 @@
+:host{
+  .sub-header{
+
+  }
+  .container{
+  }
+  .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #666;
+    border-top: 0;
+  }
+}

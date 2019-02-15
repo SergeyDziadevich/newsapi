@@ -1,0 +1,43 @@
+
+.article-preview{
+  max-width: 900px;
+  margin: 15px auto;
+  border: 1px solid #666;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+
+  &-img{
+    width: 70px;
+    margin: 0 15px 0 0;
+    img{
+      width: 70px;
+      height: 70px;
+      float: left;
+
+      border: 1px solid #666;
+    }
+  }
+
+  &-info{
+    a.readmore{
+      color:#000;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-date{
+    margin: 0 15px;
+  }
+
+  &-btn{
+    display: flex;
+    flex-direction: column;
+    a{
+      margin: 0 0 15px 0;
+    }
+  }
+}
