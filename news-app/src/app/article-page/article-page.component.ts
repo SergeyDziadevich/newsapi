@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import { ARTICLES } from '../mock-news';
 
 @Component({
   selector: 'app-article-page',
@@ -9,11 +10,16 @@ import {ActivatedRoute} from "@angular/router";
 export class ArticlePageComponent implements OnInit {
 
   public aticleNumber: string;
+  public articlePage: any;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.aticleNumber = this.route.snapshot.params['id'];
+
+    this.articlePage = ARTICLES.find((elem) => {
+      return elem.url == this.route.snapshot.params['id'];
+    });
   }
 
 }

@@ -8,14 +8,18 @@
     padding: 0 15px;
   }
   &-logo{
-    &:before{
-      content: ' ';
-      background: url("../../assets/img/logo.png");
-      background-size: 17px;
-      height: 17px;
-      width: 17px;
-      float: left;
-      margin-right: 3px;
+    a{
+      text-decoration: none;
+      color: #000;
+      &:before{
+        content: ' ';
+        background: url("../../assets/img/logo.png");
+        background-size: 17px;
+        height: 17px;
+        width: 17px;
+        float: left;
+        margin-right: 3px;
+      }
     }
   }
   &-login{

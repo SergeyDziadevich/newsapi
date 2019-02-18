@@ -1,3 +1,35 @@
-<p>
-  article-page № {{aticleNumber}} works!
-</p>
+<div class="container">
+  <div class="news-list">
+
+    article-page № {{aticleNumber}} works!
+
+    <div class="article-preview">
+      <div class="article-preview-img">
+        <a routerLink="article/1">
+          <img src="{{articlePage.urlToImage}}" alt="{{articlePage.title}}" />
+        </a>
+      </div>
+      <div class="article-preview-info">
+        <h3>
+          {{articlePage.title}}
+        </h3>
+        <div class="introtext">
+          {{articlePage.content}}
+        </div>
+        <div class="article-preview-date">
+          {{articlePage.created | date}}
+        </div>
+        <div class="article-author">
+          {{articlePage.author}}
+        </div>
+      </div>
+
+      <div class="article-preview-btn">
+        <a routerLink="article-edit/{{articlePage.url}}" class="btn" >Edit</a>
+        <button class="btn" (click)="deleteArticle()">Delete</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>

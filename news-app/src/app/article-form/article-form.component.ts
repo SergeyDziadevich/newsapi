@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-article-form',
@@ -7,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
 
+  }
+
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
+
+  save(){
+    console.log('Saved');
+  }
+
+  preventSubmit(e) {
+    e.preventDefault();
   }
 
 }
