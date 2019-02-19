@@ -11,6 +11,8 @@ export class NewsItemComponent implements OnInit {
 
   @Input() data: Article;
 
+  public isOwnNews: boolean = true;
+
   constructor() { }
 
   ngOnInit() {

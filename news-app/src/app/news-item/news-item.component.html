@@ -18,7 +18,7 @@
   <div class="article-preview-date">
     {{data.created | date}}
   </div>
-  <div class="article-preview-btn">
+  <div class="article-preview-btn" *ngIf="isOwnNews">
     <a routerLink="article-edit/{{data.url}}" class="btn" >Edit</a>
     <button class="btn" (click)="deleteArticle()">Delete</button>
   </div>
