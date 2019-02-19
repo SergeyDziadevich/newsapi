@@ -3,33 +3,12 @@
 <div class="container">
   <div class="news-list">
 
-    <div class="article-preview" *ngFor="let article of articles" >
-      <div class="article-preview-img">
-        <a routerLink="article/1">
-          <img src="{{article.urlToImage}}" alt="{{article.title}}" />
-        </a>
-      </div>
-      <div class="article-preview-info">
-        <h3>
-          {{article.title}}
-        </h3>
-        <div class="introtext">
-          {{article.description}}
-        </div>
-        <a class="readmore" routerLink="article/{{article.url}}">
-          Read more...
-        </a>
-      </div>
-      <div class="article-preview-date">
-        <!--Date: dd/mm/yy: time --> {{article.created | date}}
-      </div>
-      <div class="article-preview-btn">
-        <a routerLink="article-edit/{{article.url}}" class="btn" >Edit</a>
-        <button class="btn" (click)="deleteArticle()">Delete</button>
-      </div>
-    </div>
+    <app-news-item
+      *ngFor="let article of articles"
+      [data]="article"
+    >
+    </app-news-item>
 
     <a class="btn-loadmore" (click)="loadMore()">Load More</a>
-
   </div>
 </div>

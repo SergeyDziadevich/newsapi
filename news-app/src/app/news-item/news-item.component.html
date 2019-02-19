@@ -1,0 +1,25 @@
+<div class="article-preview">
+  <div class="article-preview-img">
+    <a routerLink="article/1">
+      <img src="{{data.urlToImage}}" alt="{{data.title}}" />
+    </a>
+  </div>
+  <div class="article-preview-info">
+    <h3>
+      {{data.title}}
+    </h3>
+    <div class="introtext">
+      {{data.description}}
+    </div>
+    <a class="readmore" routerLink="article/{{data.url}}">
+      Read more...
+    </a>
+  </div>
+  <div class="article-preview-date">
+    {{data.created | date}}
+  </div>
+  <div class="article-preview-btn">
+    <a routerLink="article-edit/{{data.url}}" class="btn" >Edit</a>
+    <button class="btn" (click)="deleteArticle()">Delete</button>
+  </div>
+</div>

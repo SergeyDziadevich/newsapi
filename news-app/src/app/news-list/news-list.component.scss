@@ -2,56 +2,10 @@
   width: 900px;
   margin: 15px auto;
 }
-.article-preview{
-  border: 1px solid #666;
-  padding: 15px;
-  margin: 15px 0;
-  display: flex;
-  justify-content: space-between;
-
-  &-img{
-    width: 70px;
-    margin: 0 15px 0 0;
-    img{
-      width: 70px;
-      height: 70px;
-      float: left;
-
-      border: 1px solid #666;
-    }
-  }
-
-  &-info{
-    a.readmore{
-      color:#000;
-      text-decoration: underline;
-      font-weight: bold;
-      margin: 10px 0 0 0;
-      float: left;
-      &:hover{
-        text-decoration: none;
-      }
-    }
-  }
-
-  &-date{
-    margin: 0 15px;
-    min-width: 90px;
-  }
-
-  &-btn{
-    display: flex;
-    flex-direction: column;
-    a{
-      margin: 0 0 15px 0;
-    }
-  }
-}
 
 .btn-loadmore{
   width: 100%;
   margin: 15px auto;
-//  border: 1px solid #666;
   display: flex;
   background: #cbcbcb;
   justify-content:center;
