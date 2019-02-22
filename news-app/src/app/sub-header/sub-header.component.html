@@ -1,8 +1,8 @@
 <div class="sub-header">
   <div class="container">
     <div class="row">
-      <div class="source" (change)="onChangeSource($event.target.value)">
-        <select>
+      <div class="source" >
+        <select (change)="onChangeSource($event.target.value)">
           <option *ngFor="let source of sources" value="{{source.id}}">{{source.name}}</option>
         </select>
       </div>

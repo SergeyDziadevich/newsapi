@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { SOURCES } from '../mock-source-list';
+import {TitleService} from "../title.service";
 
 @Component({
   selector: 'app-sub-header',
@@ -10,7 +11,7 @@ export class SubHeaderComponent implements OnInit {
 
   sources = SOURCES;
 
-  constructor() { }
+  constructor(private titleService: TitleService) { }
 
   ngOnInit() {
   }
@@ -31,5 +32,7 @@ export class SubHeaderComponent implements OnInit {
 
   onChangeSource(sourceName: string) {
     console.log(`Select source: ${sourceName}`);
+    this.titleService.setTitle(sourceName);
+
   }
 }
