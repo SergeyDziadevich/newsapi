@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Article } from "../article";
 
-
 @Component({
   selector: 'app-news-item',
   templateUrl: './news-item.component.html',
@@ -18,4 +17,7 @@ export class NewsItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteArticle() {
+    console.log(`the article has been removed`);
+  }
 }
