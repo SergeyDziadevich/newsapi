@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NewsListComponent } from './news-list/news-list.component';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { ArticleFormComponent } from './article-form/article-form.component';
-import { NewsItemComponent } from './news-item/news-item.component';
+import { NewsItemComponent } from './news-list/news-item/news-item.component';
 
 @NgModule({
   declarations: [
