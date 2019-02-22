@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import {TitleService} from "../title.service";
 
 @Component({
   selector: 'app-article-form',
@@ -8,14 +9,17 @@ import { Location } from '@angular/common';
 })
 export class ArticleFormComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(
+    private location: Location,
+    private titleService: TitleService
+  ) { }
 
   ngOnInit() {
-
+    this.titleService.setTitle('Edit');
   }
 
   cancel() {
-    this.location.back(); // <-- go back to previous location on cancel
+    this.location.back();
   }
 
   save(){

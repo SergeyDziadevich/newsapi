@@ -20,6 +20,8 @@ export class ArticlePageComponent implements OnInit {
     this.articlePage = ARTICLES.find((elem) => {
       return elem.url == this.route.snapshot.params['id'];
     });
+
+
   }
 
 }

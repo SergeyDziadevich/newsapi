@@ -1,25 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { ARTICLES } from '../mock-news';
+import { TitleService } from "../title.service";
 
 @Component({
   selector: 'app-news-list',
   templateUrl: './news-list.component.html',
   styleUrls: ['./news-list.component.scss']
 })
-export class NewsListComponent implements OnInit {
+export class NewsListComponent implements OnInit, OnChanges, OnDestroy {
 
   articles = ARTICLES;
 
-  constructor() { }
+  limit: number = 5;
+
+  constructor(private titleService: TitleService) { }
 
   ngOnInit() {
-  }
-
-  deleteArticle() {
-    console.log(`the article has been removed`);
+    this.titleService.setTitle('News App');
+    console.log("ngOnInit");
   }
 
   loadMore(){
-    console.log(`load more articles`);
+    this.limit+=5;
+    console.log(`load more articles:`, this.limit);
+  }
+
+  ngOnChanges(): void {
+    console.log("ngOnChanges");
+  }
+
+  ngOnDestroy(): void {
+    console.log("ngOnDestroy");
   }
 }
