@@ -1,4 +1,4 @@
-import { Source } from './source';
+import { Source } from '../interfaces/source';
 
 export const SOURCES: Source[] = [
   { id: "abc-news", name: 'ABC News' },

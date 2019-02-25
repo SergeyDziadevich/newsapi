@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import {TitleService} from "../title.service";
+import {TitleService} from "../../services/title/title.service";
 
 @Component({
   selector: 'app-article-form',

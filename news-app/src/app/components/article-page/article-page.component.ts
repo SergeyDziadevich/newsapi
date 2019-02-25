@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { ARTICLES } from '../mock-news';
+import { ARTICLES } from '../../mock/mock-news';
 
 @Component({
   selector: 'app-article-page',

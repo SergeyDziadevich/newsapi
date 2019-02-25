@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import { TitleService } from "../title.service";
+import { TitleService } from "../../services/title/title.service";
 
 @Component({
   selector: 'app-header',

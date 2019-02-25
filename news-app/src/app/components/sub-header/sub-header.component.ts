@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import { SOURCES } from '../mock-source-list';
-import {TitleService} from "../title.service";
+import { SOURCES } from '../../mock/mock-source-list';
+import {TitleService} from "../../services/title/title.service";
 
 @Component({
   selector: 'app-sub-header',
