@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SOURCES } from '../../mock/mock-source-list';
+import { SOURCES } from '../../../mocks/mock-source-list';
 import { TitleService } from "../../services/title/title.service";
 import { KeywordSearchService } from '../../services/keyword-search/keyword-search.service';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output} from '@angular/core';
-import { ARTICLES } from '../../mock/mock-news';
+import { ARTICLES } from '../../../mocks/mock-news';
 import { TitleService } from "../../services/title/title.service";
 import { KeywordSearchService } from '../../services/keyword-search/keyword-search.service';
 

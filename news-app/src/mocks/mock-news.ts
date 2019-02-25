@@ -1,4 +1,4 @@
-import { Article } from '../interfaces/article';
+import { Article } from '../app/interfaces/article';
 
 export const ARTICLES: Article[] = [
   {
