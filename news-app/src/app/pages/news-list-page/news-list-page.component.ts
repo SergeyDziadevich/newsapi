@@ -33,9 +33,12 @@ export class NewsListPageComponent implements OnInit {
       this.keywords = keywords;
     });
 
-    this.apiService.getNews().subscribe((data: Article[]) => {
-      this.articles = data;
-    });
+    this.apiService.getNews().subscribe(
+      (data: Article[]) => {
+        this.articles = data;
+      },
+      (error) => console.log(error)
+    );
   }
 
   loadMore(){

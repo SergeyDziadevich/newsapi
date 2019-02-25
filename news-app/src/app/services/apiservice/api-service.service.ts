@@ -17,7 +17,7 @@ export class ApiService {
   }
 
   getNews(){
-    return this.httpClient.get<any>(`https://newsapi.org/v2/everything?q=bitcoin&from=2019-01-25&sortBy=publishedAt&apiKey=eabd967104da4e07a9c41b1342a889b1`)
+    return this.httpClient.get<any>(`https://newsapi.org/v2/top-headlines?sources=abc-news&apiKey=eabd967104da4e07a9c41b1342a889b1`)
       .pipe(
         map((response: any) => {
           console.log('response', response);
@@ -28,6 +28,6 @@ export class ApiService {
   }
 
   getOwnNews(){
-
+    return this.httpClient.get<any>('http://localhost:3000/news');
   }
 }
