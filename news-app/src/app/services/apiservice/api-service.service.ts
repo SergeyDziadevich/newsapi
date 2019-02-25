@@ -13,14 +13,21 @@ export class ApiService {
   //public sourcesEmitter: EventEmitter<Source[]> = new EventEmitter<Source[]>();
 
   getSources(){
-    return this.httpClient.get<any>('https://someapi.com/')
+    return this.httpClient.get<any>(`https://newsapi.org/v2/sources?apiKey=eabd967104da4e07a9c41b1342a889b1`)
+      .pipe(
+        map((response: any) => {
+          console.log('sources', response);
+          // const data = response.json();
+          return response.sources;
+        })
+      );
   }
 
   getNews(){
     return this.httpClient.get<any>(`https://newsapi.org/v2/top-headlines?sources=abc-news&apiKey=eabd967104da4e07a9c41b1342a889b1`)
       .pipe(
         map((response: any) => {
-          console.log('response', response);
+          console.log('articles', response);
           // const data = response.json();
           return response.articles;
         })
