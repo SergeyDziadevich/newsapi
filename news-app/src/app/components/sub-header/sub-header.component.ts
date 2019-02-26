@@ -55,5 +55,7 @@ export class SubHeaderComponent implements OnInit {
     this.titleService.setTitle(sourceName);
 
     this.apiService.setSource(sourceId);
+
+
   }
 }
