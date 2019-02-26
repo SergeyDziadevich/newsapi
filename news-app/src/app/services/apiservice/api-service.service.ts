@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import { Article } from "../../interfaces/article";
 import { Source } from "../../interfaces/source";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,9 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public source;
+  public sourceEmitter: EventEmitter<any> = new EventEmitter<any>();
 
-  //public sourcesEmitter: EventEmitter<Source[]> = new EventEmitter<Source[]>();
+  public bs = new BehaviorSubject<Article[]>([]);
 
   getSources(){
     return this.httpClient.get<any>(`https://newsapi.org/v2/sources?apiKey=eabd967104da4e07a9c41b1342a889b1`)
@@ -26,8 +27,21 @@ export class ApiService {
       );
   }
 
-  getNews(){
-    return this.httpClient.get<any>(`https://newsapi.org/v2/top-headlines?sources=${this.source.id}&apiKey=eabd967104da4e07a9c41b1342a889b1`)
+  // getNews(){
+  //   return this.httpClient.get<any>(`https://newsapi.org/v2/top-headlines?sources=${this.source.id}&apiKey=eabd967104da4e07a9c41b1342a889b1`)
+  //     .pipe(
+  //       map((response: any) => {
+  //         console.log('articles', response);
+  //         // const data = response.json();
+  //         return response.articles;
+  //       })
+  //     );
+  // }
+
+
+  getNewsBySource(sourceId){
+    console.log(sourceId);
+    return this.httpClient.get<any>(`https://newsapi.org/v2/top-headlines?sources=${sourceId}&apiKey=eabd967104da4e07a9c41b1342a889b1`)
       .pipe(
         map((response: any) => {
           console.log('articles', response);
@@ -37,11 +51,9 @@ export class ApiService {
       );
   }
 
-  setSource(sourceId: string, sourceName: string){
-    this.source = {id: sourceId, name: sourceName};
 
-    console.log(this.source);
-
+  setSource(sourceId: string){
+    this.sourceEmitter.emit(sourceId);
   }
 
   getOwnNews(){
