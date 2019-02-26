@@ -17,6 +17,7 @@ export class SubHeaderComponent implements OnInit {
   //sources = SOURCES;
   public sources;
 
+
   constructor(
     private titleService: TitleService,
     private keywordSearchService: KeywordSearchService,
@@ -48,9 +49,11 @@ export class SubHeaderComponent implements OnInit {
     console.log(`Displays news created by me`);
   }
 
-  onChangeSource(sourceName: string) {
-    console.log(`Select source: ${sourceName}`);
+  onChangeSource(sourceId: string, sourceName: string) {
+    console.log(`Select source: ${sourceId} - ${sourceName}`);
+
     this.titleService.setTitle(sourceName);
 
+    this.apiService.setSource(sourceId, sourceName);
   }
 }

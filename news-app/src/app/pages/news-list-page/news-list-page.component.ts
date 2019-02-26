@@ -15,7 +15,7 @@ import { KeywordSearchService } from '../../services/keyword-search/keyword-sear
 export class NewsListPageComponent implements OnInit {
 
  // articles: Article[] = ARTICLES;
-  public articles: Article[];
+  public articles: Article[] = [];
   public keywords: string;
 
   constructor(
@@ -39,6 +39,12 @@ export class NewsListPageComponent implements OnInit {
       },
       (error) => console.log(error)
     );
+
+    // this.apiService.getOwnNews().subscribe(
+    //   (data: Article[]) => {
+    //     this.articles = this.articles.concat(data);
+    //   }
+    // );
   }
 
   loadMore(){
