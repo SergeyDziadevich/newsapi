@@ -20,4 +20,16 @@ describe("Welcome to Express", () => {
     });
   });
 
+  describe("News", () => {
+
+    it("should GET all news", (done) => {
+      request.get('http://localhost:3000/news', (error, response, body) => {
+        expect(response.statusCode).toBe(200);
+        expect(body).toContain("google-news");
+        done();
+      });
+    });
+  });
+
 });
+
