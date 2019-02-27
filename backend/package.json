@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "node_modules/.bin/karma start karma.conf.js",
+    "test-auto": "npm test -- --auto-watch --no-single-run false",
+    "test-node": "jasmine-node spec"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -12,6 +15,12 @@
     "express": "~4.16.0",
     "express-session": "^1.15.6",
     "http-errors": "~1.6.2",
+    "jasmine": "^3.3.1",
+    "jasmine-core": "^3.3.0",
+    "karma": "^4.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^2.0.1",
     "mongoose": "^5.4.11",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
@@ -19,6 +28,10 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "pug": "2.0.0-beta11",
+    "request": "^2.88.0",
     "winston": "^3.2.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.16.2"
   }
 }
