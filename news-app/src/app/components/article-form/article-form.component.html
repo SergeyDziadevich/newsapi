@@ -1,0 +1,52 @@
+<div class="container">
+  <form class="article-form" ngModel="article" (submit)="preventSubmit($event)">
+    <div>
+      <div class="form-group">
+        <label for="heading">Heading</label>
+        <input type="text" id="heading">
+      </div>
+      <div class="form-group">
+        <label for="short-desc">Short description</label>
+        <input type="text" id="short-desc">
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea id="content"></textarea>
+      </div>
+    </div>
+    <div>
+      <div class="form-group">
+        <label for="image" class="label-image">Image</label>
+        <div class="form-check">
+          <label class="form-check-label" for="image-url">
+            <input class="form-check-input" type="radio" name="image-check" value="url" id="image-url">
+            URL
+          </label>
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="image-check" value="file">
+            File
+          </label>
+        </div>
+        <input type="text" id="image">
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="text" id="date">
+      </div>
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" id="author">
+      </div>
+      <div class="form-group">
+        <label for="url">Source URL</label>
+        <input type="text" id="url">
+      </div>
+
+      <div class="form-group form-control">
+        <input type="submit" value="Save" class="btn" (click)="save()">
+        <button class="btn" (click)="cancel()">Cancel</button>
+      </div>
+
+    </div>
+  </form>
+</div>

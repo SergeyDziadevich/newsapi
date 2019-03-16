@@ -1,0 +1,14 @@
+<app-sub-header></app-sub-header>
+
+<div class="container">
+  <div class="news-list">
+
+    <app-news-item
+      *ngFor="let article of articles"
+      [data]="article"
+    >
+    </app-news-item>
+
+    <a class="btn-loadmore" (click)="loadMore()">Load More</a>
+  </div>
+</div>

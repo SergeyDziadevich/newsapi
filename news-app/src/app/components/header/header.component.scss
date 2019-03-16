@@ -1,0 +1,40 @@
+.header{
+  &-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #666;
+    height: 50px;
+    padding: 0 15px;
+  }
+  &-logo{
+    a{
+      text-decoration: none;
+      color: #000;
+      &:before{
+        content: ' ';
+        background: url("../../../assets/img/logo.png");
+        background-size: 17px;
+        height: 17px;
+        width: 17px;
+        float: left;
+        margin-right: 3px;
+      }
+    }
+  }
+  &-login{
+    label{
+      margin: 0 15px 0 0;
+    }
+    button{
+      cursor: pointer;
+    }
+  }
+  .page-title{
+    border: 1px solid #666;
+    border-top: 0;
+    background: #cbcbcb;
+    text-align: center;
+    padding: 15px 0;
+  }
+}

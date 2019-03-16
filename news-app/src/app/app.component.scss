@@ -1,0 +1,17 @@
+:host ::ng-deep{
+  .container{
+    max-width: 1200px;
+    margin: 0 auto
+  }
+  h1{
+    font: 700 20px Arial;
+  }
+  a.btn, .btn{
+    background: #cbcbcb;
+    color:#000;
+    border: 0;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 4px 10px;
+  }
+}
