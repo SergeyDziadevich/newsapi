@@ -1,9 +1,11 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
+
+import {BehaviorSubject} from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Article } from "../../interfaces/article";
+
+import { Article } from '../../interfaces/article';
 import { Source } from "../../interfaces/source";
-import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +23,6 @@ export class ApiService {
       .pipe(
         map((response: any) => {
           console.log('sources', response);
-          // const data = response.json();
           return response.sources;
         })
       );
@@ -33,7 +34,6 @@ export class ApiService {
       .pipe(
         map((response: any) => {
           console.log('articles', response);
-          // const data = response.json();
           return response.articles;
         })
       );
