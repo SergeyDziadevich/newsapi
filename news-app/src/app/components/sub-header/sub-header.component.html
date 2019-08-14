@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="source" >
-        <select (change)="onChangeSource($event.target.value)">
+        <select (change)="onChangeSource($event.target.value, $event.target.options[$event.target.selectedIndex].text)">
           <option *ngFor="let source of sources" value="{{source.id}}">{{source.name}}</option>
         </select>
       </div>

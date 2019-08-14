@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private titleService: TitleService) { }
 
   ngOnInit() {
-    this.titleService.pageTitle.subscribe((newTitle: string)=>{
+    this.titleService.pageTitle.subscribe((newTitle: string) => {
       this.title = newTitle;
     })
   }

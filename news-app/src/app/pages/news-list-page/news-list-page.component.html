@@ -3,11 +3,10 @@
 <div class="container">
   <div class="news-list">
 
-    <app-news-item
-      *ngFor="let article of articles"
-      [data]="article"
+    <app-news-list
+      [articles]="articles | filterNews: keywords"
     >
-    </app-news-item>
+    </app-news-list>
 
     <a class="btn-loadmore" (click)="loadMore()">Load More</a>
   </div>

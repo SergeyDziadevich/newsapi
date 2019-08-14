@@ -1,20 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ARTICLES } from '../../mock/mock-news';
+import { Component, Input } from '@angular/core';
+import { Article } from "../../interfaces/article";
 
 @Component({
   selector: 'app-news-list',
   templateUrl: './news-list.component.html',
   styleUrls: ['./news-list.component.scss']
 })
-export class NewsListComponent implements OnInit {
+export class NewsListComponent {
 
-  articles = ARTICLES;
+  @Input() articles: Article[] = [];
 
   constructor() { }
-
-  ngOnInit() {
-
-  }
-
 
 }
